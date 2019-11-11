@@ -69,6 +69,12 @@ namespace DayPlanner
                 dataGridView1.Rows.RemoveAt(item.Index);
             }
         }
+        /// <summary>
+        /// XML комментарии
+        /// </summary>
+        /// <param name="maxOpacity"></param>
+        /// <param name="stepOpacity"></param>
+        /// <param name="Delay"></param>
         async void Appearance(float maxOpacity,float stepOpacity,int Delay)
         {
             if (maxOpacity > 100) maxOpacity = 100;
