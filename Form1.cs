@@ -19,7 +19,7 @@ namespace DayPlanner
         {
             InitializeComponent();
             CheckFile();
-            Appearance();
+            Appearance(100,0.01f,10);
         }
         void CheckFile()
         {
@@ -69,13 +69,14 @@ namespace DayPlanner
                 dataGridView1.Rows.RemoveAt(item.Index);
             }
         }
-        async void Appearance()
+        async void Appearance(float maxOpacity,float stepOpacity,int Delay)
         {
-            
-            for(int i=0;i<95;i++)
+            if (maxOpacity > 100) maxOpacity = 100;
+            if(maxOpacity<0) maxOpacity = 0;
+            for(float i=0;i<=maxOpacity/100; i+=stepOpacity)
             {
-                await Task.Delay(50);
-                Opacity += 0.01;
+                await Task.Delay(Delay);
+                Opacity = i;
             }
         }
     }
