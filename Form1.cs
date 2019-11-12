@@ -67,8 +67,10 @@ namespace DayPlanner
             foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
             {
                 dataGridView1.Rows.RemoveAt(item.Index);
+                int i;
             }
         }
+        //Новый комментарий 1
         /// <summary>
         /// XML комментарии
         /// </summary>
